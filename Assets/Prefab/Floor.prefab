@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3360698}
   - component: {fileID: 6512632}
   - component: {fileID: 2397412}
+  - component: {fileID: 114077704975005590}
   m_Layer: 11
   m_Name: Floor
   m_TagString: Floar
@@ -44,7 +45,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 3b854a087b0114221b77051777e3df16, type: 2}
   m_StaticBatchInfo:
@@ -57,7 +57,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -100,3 +100,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139960}
   m_IsPrefabParent: 1
+--- !u!114 &114077704975005590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354abd8c4b3c70b41a08e1bcf9e41690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
