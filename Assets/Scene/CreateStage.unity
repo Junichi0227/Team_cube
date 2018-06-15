@@ -393,11 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb163dab67cc954a8c84b0cba5c2817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allBlocksSkinIcon:
+  allItemIcons:
   - {fileID: 1343489099412424, guid: 2bc95f3ce934c7645b6b4422db53487b, type: 2}
   - {fileID: 1796369179580932, guid: 645c341d07a938d42b59bf78d3e6b8a3, type: 2}
-  allPlayer1SkinIcon: []
-  Icon: []
+  - {fileID: 1484684450435440, guid: 42c6b1cb4a122824a8a5eab677093b98, type: 2}
 --- !u!1 &1422578616
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +594,7 @@ GameObject:
   - component: {fileID: 1680781610}
   - component: {fileID: 1680781612}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BlockUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,12 +692,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockIconImage: {fileID: 1680781608}
-  installedMax: 0
-  allBlockSkinObjects:
+  installedMax: 50
+  allItemObjects:
   - {fileID: 139960, guid: f313bf1a082874675b631bfb267a4ad8, type: 2}
   - {fileID: 140362, guid: 38824b11fc84640aab5ded2ef92007d1, type: 2}
-  player1Sukin: []
-  player2Sukin: []
+  - {fileID: 140606, guid: 22cbc78013a924dcf963d8fdc02e3ec8, type: 2}
   iconStartPosition: {fileID: 1793434828}
   uiCamera: {fileID: 1422578619}
 --- !u!4 &1727785224

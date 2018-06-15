@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33168101681325304}
   - component: {fileID: 65519672820427070}
   - component: {fileID: 23760633574528550}
+  - component: {fileID: 114694123510874388}
   m_Layer: 13
   m_Name: WallIcon
   m_TagString: Wall
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114694123510874388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484684450435440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354abd8c4b3c70b41a08e1bcf9e41690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  type: 0
