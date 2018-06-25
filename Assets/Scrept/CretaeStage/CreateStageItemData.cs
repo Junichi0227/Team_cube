@@ -26,12 +26,17 @@ public class CreateStageItemData : MonoBehaviour
         get { return isGetItems; }
     }
 
+
+
     void Start()
     {
+        Debug.Log((int)ItemField.BLOCK);
         GetData();
-        SetItemGet(0, true);
-        SetItemGet(1, true);
-        SetItemGet(2, true);
+        SetItemGet(ItemType.Floor, true);
+        SetItemGet(ItemType.Goal, false);
+        SetItemGet(ItemType.Wall, true);
+        SetItemGet(ItemType.LightCube_Blue, true);
+        SetItemGet(ItemType.LightCube_Orange, true);
     }
 
     // Update is called once per frame
@@ -45,14 +50,13 @@ public class CreateStageItemData : MonoBehaviour
     /// 指定したIDのアイテムを持っているかを設定する
     /// 指定したTypeの中のIDのものを設定する
     /// </summary>
-    public void SetItemGet(int itemID, bool isGet)
+    public void SetItemGet(ItemType itemType, bool isGet)
     {
 
         if (isGet)
-            isGetItems[itemID] = 1;
+            isGetItems[(int)itemType] = 1;
         else
-            IsGetBlocks[itemID] = 0;
-
+            IsGetBlocks[(int)itemType] = 0;
 
         SaveData();
     }

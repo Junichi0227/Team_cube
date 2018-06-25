@@ -12,6 +12,18 @@ public class CreateStageManager : MonoBehaviour
     [SerializeField]
     private GameObject blockIconImage;
 
+    /// <summary>
+    /// プレイヤー1のスキンを並べる画像
+    /// </summary>
+    [SerializeField]
+    private GameObject player1SkinImage;
+
+    /// <summary>
+    /// プレイヤー2のスキンを並べる画像
+    /// </summary>
+    [SerializeField]
+    private GameObject player2SkinImage;
+
 
     /// <summary>
     /// 設置できる最大数
@@ -68,22 +80,6 @@ public class CreateStageManager : MonoBehaviour
     /// </summary>
     private List<GameObject> getPlayer2Skins;
 
-
-
-
-
-    ///// <summary>
-    ///// プレイヤー1のスキン
-    ///// </summary>
-    //[SerializeField]
-    //private List<GameObject> player1Sukin;
-
-    ///// <summary>
-    ///// プレイヤー2のスキン
-    ///// </summary>
-    //[SerializeField]
-    //private List<GameObject> player2Sukin;
-
     /// <summary>
     /// アイコン配置の開始位置
     /// </summary>
@@ -102,7 +98,22 @@ public class CreateStageManager : MonoBehaviour
     /// </summary>
     private GameObject selectObject;
 
+    /// <summary>
+    /// オブジェクトを選択できる状態かどうか
+    /// </summary>
     private bool isSelectObject;
+
+
+    /// <summary>
+    /// オブジェクトを選択できる状態かどうか
+    /// </summary>
+    private bool isCanSelectObject;
+    public bool IsCanSelectObject
+    {
+        get { return isCanSelectObject; }
+        set { this.isCanSelectObject = value; }
+    }
+
 
 
 
@@ -150,22 +161,22 @@ public class CreateStageManager : MonoBehaviour
             //ブロックを所持していたら
             if (isGetItems[allItemSkins[i].GetComponent<ItemInformation>().ID] == 1)
             {
-                switch(allItemSkins[i].GetComponent<ItemInformation>().Type)
+                switch(allItemSkins[i].GetComponent<ItemInformation>().ItemField)
                 {
-                    case ItemType.BLOCK:
+                    case ItemField.BLOCK:
                         //所持ブロックリストに追加
                         getBlocksIcon.Add(allItemSkins[i]);
                         getBlocks.Add(allItemObjects[i]);
                         break;
-                    case ItemType.PLAYER1SKIN:
+                    case ItemField.PLAYER1SKIN:
                         //所持プレイヤー1スキンリストに追加
                         getPlayer1SkinIcons.Add(allItemSkins[i]);
                         getPlayer1Skins.Add(allItemObjects[i]);
                         break;
-                    case ItemType.PLAYER2SKIN:
+                    case ItemField.PLAYER2SKIN:
                         //所持プレイヤー1スキンリストに追加
-                        getPlayer1SkinIcons.Add(allItemSkins[i]);
-                        getPlayer1Skins.Add(allItemObjects[i]);
+                        getPlayer2SkinIcons.Add(allItemSkins[i]);
+                        getPlayer2Skins.Add(allItemObjects[i]);
                         break;
                 }         
             }
@@ -178,6 +189,16 @@ public class CreateStageManager : MonoBehaviour
     /// アイテムアイコンの設定
     /// </summary>
     private void SetItemIcon()
+    {
+        SetBlockIcon();
+        SetPlayer1SkinIcon();
+        SetPlayer2SkinIcon();
+    }
+
+    /// <summary>
+    /// ブロックアイコンの設定
+    /// </summary>
+    private void SetBlockIcon()
     {
         for (int i = 0; i < getBlocksIcon.Count; i++)
         {
@@ -192,11 +213,45 @@ public class CreateStageManager : MonoBehaviour
     }
 
     /// <summary>
+    /// プレイヤー１スキンアイコンの設定
+    /// </summary>
+    private void SetPlayer1SkinIcon()
+    {
+        for (int i = 0; i < getPlayer1SkinIcons.Count; i++)
+        {
+            //生成
+            GameObject iconObject = Instantiate(getPlayer1SkinIcons[i]);
+            //親オブジェクトを設定
+            iconObject.transform.SetParent(player1SkinImage.transform, false);
+            //座標の設定
+            float positionX = iconStartPosition.transform.position.x + (i * 1.5f);
+            iconObject.transform.position = new Vector3(positionX, iconObject.transform.position.y, iconObject.transform.position.z);
+        }
+    }
+
+    /// <summary>
+    /// x
+    /// </summary>
+    private void SetPlayer2SkinIcon()
+    {
+        for (int i = 0; i < getPlayer2SkinIcons.Count; i++)
+        {
+            //生成
+            GameObject iconObject = Instantiate(getPlayer2SkinIcons[i]);
+            //親オブジェクトを設定
+            iconObject.transform.SetParent(player2SkinImage.transform, false);
+            //座標の設定
+            float positionX = iconStartPosition.transform.position.x + (i * 1.5f);
+            iconObject.transform.position = new Vector3(positionX, iconObject.transform.position.y, iconObject.transform.position.z);
+        }
+    }
+
+    /// <summary>
     /// アイコンのタッチ判定
     /// </summary>
     private void TouchItemIcon()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)&&isCanSelectObject)
         {
             //Rayを飛ばす
             Ray ray = uiCamera.ScreenPointToRay(Input.mousePosition);

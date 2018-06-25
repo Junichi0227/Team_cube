@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6553072}
   - component: {fileID: 2370502}
   - component: {fileID: 5443484}
+  - component: {fileID: 114169555401970326}
   - component: {fileID: 11403564}
   m_Layer: 9
   m_Name: LightCube_Blue
@@ -46,7 +47,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a53a53aac4a42420a8a8df48a83a5a6b, type: 2}
   m_StaticBatchInfo:
@@ -59,7 +59,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -126,3 +126,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109644}
   m_IsPrefabParent: 1
+--- !u!114 &114169555401970326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354abd8c4b3c70b41a08e1bcf9e41690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  itemType: 3
+  itemField: 0

@@ -116,3 +116,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  itemType: 1
+  itemField: 0

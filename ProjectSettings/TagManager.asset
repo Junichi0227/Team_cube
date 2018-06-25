@@ -10,6 +10,7 @@ TagManager:
   - Floor
   - Stairs
   - Warp
+  - Icon
   layers:
   - Default
   - TransparentFX

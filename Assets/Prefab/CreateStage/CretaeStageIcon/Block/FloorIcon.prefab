@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114744670511034556}
   m_Layer: 13
   m_Name: FloorIcon
-  m_TagString: Floar
+  m_TagString: Icon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,4 +108,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  type: 0
+  itemType: 0
+  itemField: 0

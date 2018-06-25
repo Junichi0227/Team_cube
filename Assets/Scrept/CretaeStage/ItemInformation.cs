@@ -7,18 +7,33 @@ public class ItemInformation : MonoBehaviour {
     [SerializeField]
     private int id;
 
+    /// <summary>
+    /// アイテムの種類
+    /// </summary>
     [SerializeField]
-    private ItemType type;
+    private ItemType itemType;
+
+    /// <summary>
+    /// アイテムの分野
+    /// </summary>
+    [SerializeField]
+    private ItemField itemField;
 
     public int ID
     {
         get { return id; }
     }
 
-    public ItemType Type
+    public ItemField ItemField
     {
-        get{ return type; }
+        get{ return itemField; }
     }
+
+    public ItemType ItemType
+    {
+        get { return itemType; }
+    }
+
 
 
 
