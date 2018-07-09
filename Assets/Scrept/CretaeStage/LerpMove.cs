@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LerpMove{
 
+
+    private GameObject moveObject;
     //移動開始位置
     private Vector3 startPosition;
 
@@ -43,7 +45,7 @@ public class LerpMove{
 
  
 
-    public void Update(GameObject gameObject)
+    public void Update()
     {
         if (!isMove) return;
         var dift = Time.timeSinceLevelLoad - startTime;
@@ -56,19 +58,20 @@ public class LerpMove{
         var rate = dift / time;
 
         //UIだったら
-        if(gameObject.GetComponent<RectTransform>())
+        if(moveObject.GetComponent<RectTransform>())
         {
-             gameObject.GetComponent<RectTransform>().localPosition = Vector3.Lerp(startPosition, endPosition, rate);
+             moveObject.GetComponent<RectTransform>().localPosition = Vector3.Lerp(startPosition, endPosition, rate);
         }
         //そうじゃなかったら
         else
         {
-            gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, rate);
+            moveObject.transform.position = Vector3.Lerp(startPosition, endPosition, rate);
         }
     }
 
-    public void StartMove(Vector3 startPos,Vector3 endPos, float time)
+    public void StartMove(GameObject moveObject,Vector3 startPos,Vector3 endPos, float time)
     {
+        this.moveObject = moveObject;
         startTime = Time.timeSinceLevelLoad;
         startPosition = startPos;
         endPosition = endPos;

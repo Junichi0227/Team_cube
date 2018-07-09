@@ -5,7 +5,9 @@ using UnityEngine;
 public enum ItemField{
 
     BLOCK,
+    FLOOR,
     PLAYER1SKIN,
     PLAYER2SKIN,
+    GOAL,
 
 }

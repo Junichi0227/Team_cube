@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ItemInformation : MonoBehaviour {
 
-    [SerializeField]
-    private int id;
-
     /// <summary>
     /// アイテムの種類
     /// </summary>
@@ -19,10 +16,15 @@ public class ItemInformation : MonoBehaviour {
     [SerializeField]
     private ItemField itemField;
 
-    public int ID
-    {
-        get { return id; }
-    }
+    /// <summary>
+    /// マス目
+    /// </summary>
+    private Squares squares;
+
+    /// <summary>
+    /// 階層
+    /// </summary>
+    private int fault;
 
     public ItemField ItemField
     {
@@ -33,6 +35,19 @@ public class ItemInformation : MonoBehaviour {
     {
         get { return itemType; }
     }
+
+    public Squares Squares
+    {
+        get { return squares; }
+        set { this.squares = value; }
+    }
+
+    public int Fault
+    {
+        get { return fault; }
+        set { this.fault = value; }
+    }
+
 
 
 

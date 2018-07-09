@@ -21,11 +21,12 @@ public class RotateCube : MonoBehaviour {
 	bool push_left = false;
 
 	float time = 0; //タイマー　1になったら回転終了
-	public FlagManeger flagManeger;
+	private FlagManeger flagManeger;
 
 	void Start () {
-		
-		Parent = new GameObject ("Parent"); //Parentという空のオブジェクトを生成する。
+
+        flagManeger = GameObject.FindObjectOfType<FlagManeger>();
+        Parent = new GameObject ("Parent"); //Parentという空のオブジェクトを生成する。
 		this.transform.parent = Parent.transform; //Cubeの親をParentオブジェクトにする
 	}
 

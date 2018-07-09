@@ -7,6 +7,7 @@ public enum ItemType
     Floor,
     Goal,
     Wall,
+    TestBlock,
     LightCube_Blue,
     LightCube_Orange,
 }
